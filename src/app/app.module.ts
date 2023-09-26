@@ -14,6 +14,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
 const initializer = (pwaService: PwaService) => {
   return () => {
     console.log('running');
@@ -29,6 +30,7 @@ const initializer = (pwaService: PwaService) => {
     PromptComponent,
     LoaderComponent,
     SplashScreenComponent,
+    SidenavComponent,
   ],
   imports: [
     BrowserModule,

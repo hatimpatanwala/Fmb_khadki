@@ -1,0 +1,16 @@
+$backgroundColor:#fff;
+
+.login_outer{
+    background-color: $backgroundColor;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .login_inner{
+background-color: #fff;
+max-width: 300px;
+
+    }
+}
