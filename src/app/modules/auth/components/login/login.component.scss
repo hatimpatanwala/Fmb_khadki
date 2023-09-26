@@ -1,16 +1,38 @@
-$backgroundColor:#fff;
+// $backgroundColor:#fff;
 
 .login_outer{
-    background-color: $backgroundColor;
-    height: 100vh;
+    // background-color: $backgroundColor;
+    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    .umoor-logo{
+        height: 150px;
+        width: 200px;
+        img{height: 100%;width: 100%;}
+        margin-bottom: 5%;
+    }
     .login_inner{
-background-color: #fff;
-max-width: 300px;
+background-color: #E7D5B7;
+
+// max-width: 300px;
+// padding: 10%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+.action-button{
+    background: #641313;
+}
+.fmb-logo{
+    height: 120px;
+    width: 180px;
+    img{height: 100%;width: 100%;}
+     margin-bottom: 15%;
+}
 
     }
+
 }
