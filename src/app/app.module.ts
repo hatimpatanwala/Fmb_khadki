@@ -15,6 +15,7 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
+import { HeaderComponent } from './components/header/header.component';
 const initializer = (pwaService: PwaService) => {
   return () => {
     console.log('running');
@@ -31,6 +32,7 @@ const initializer = (pwaService: PwaService) => {
     LoaderComponent,
     SplashScreenComponent,
     SidenavComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,
