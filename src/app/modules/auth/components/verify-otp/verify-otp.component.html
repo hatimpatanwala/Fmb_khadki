@@ -9,7 +9,7 @@
     </div>
     <h3 class="city_name">Pune Khadki</h3>
     <form [formGroup]="verifyOtpForm" class="verifyOtp-form" (submit)="onVerify()">
-      <mat-form-field appearance="outline" class="otp-input">
+      <mat-form-field appearance="outline" class="otp-input" [ngStyle]="{'margin-bottom':'10px'}">
         <mat-label>Enter ITS</mat-label>
         <input
           formControlName="itsId"
@@ -24,11 +24,10 @@
       <mat-label>Enter OTP</mat-label>
       <input
         formControlName="otp"
-        type="number"
+        type="text"
         required
         matInput
-        maxlength="4"
-        minlength="4"
+        
       />
     </mat-form-field>
     <mat-error
