@@ -1,5 +1,37 @@
-import { CanActivateFn } from '@angular/router';
-
-export const authGuard: CanActivateFn = (route, state) => {
-  return true;
-};
+import { Injectable } from '@angular/core';
+import {
+  Router,
+  CanActivate,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  UrlTree,
+} from '@angular/router';
+import { Observable } from 'rxjs';
+@Injectable({ providedIn: 'root' })
+export class AuthGuard implements CanActivate {
+  constructor(private router: Router) {}
+  canActivate(
+    route: ActivatedRouteSnapshot,
+    state: RouterStateSnapshot
+  ):
+    | boolean
+    | UrlTree
+    | Observable<boolean | UrlTree>
+    | Promise<boolean | UrlTree> {
+    const token = JSON.parse(localStorage.getItem('token'));
+    console.log(token);
+    if (token && token === '123') {
+      return true;
+    } else {
+      this.router.navigate(['/login']);
+      return false;
+    }
+  }
+}
+// export const authGuard = (route, state) => {
+//   const token = JSON.parse(localStorage.get('token'));
+//   if (token && token === '123') {
+//     return true;
+//   } else {
+//   }
+// };

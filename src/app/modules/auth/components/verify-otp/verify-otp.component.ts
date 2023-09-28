@@ -29,7 +29,7 @@ export class VerifyOtpComponent {
   }
   ngOnInit(): void {
     this.verifyOtpForm = this.formBuilder.group({
-      itsId: [{value:this.itsId,disabled:true}, [Validators.required]],
+      itsId: [{ value: this.itsId, disabled: true }, [Validators.required]],
       otp: [null, Validators.required],
     });
   }
@@ -39,13 +39,12 @@ export class VerifyOtpComponent {
         its: this.verifyOtpForm.controls.itsId.value.toString(),
         otp: this.verifyOtpForm.controls.otp.value.toString(),
       };
+
       const result = await this.authService.verifyOtp(payload);
-      // if (result) {
-      //   this.router.navigate(['verify-otp'], {
-      //     queryParams: { its: payload.its },
-      //   });
-      // }
-      console.log(result);
+      if (result) {
+       
+        this.router.navigate(['/dashboard']);
+      }
     } catch (err) {
       this.verifyOtpForm.controls.otp.setValue(null);
       this._snackBar.open(err);

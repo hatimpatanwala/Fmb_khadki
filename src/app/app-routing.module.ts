@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { authGuard } from './modules/auth/guards/auth.guard';
-import { roleGuard } from './modules/auth/guards/role.guard';
+import { AuthGuard } from './modules/auth/guards/auth.guard';
 
 const routes: Routes = [
   {
@@ -16,14 +14,14 @@ const routes: Routes = [
       import('./modules/dashboard/dashboard.module').then(
         (m) => m.DashboardModule
       ),
-    canActivate: [authGuard],
+    canActivate: [AuthGuard],
   },
 
   {
     path: 'menu',
     loadChildren: () =>
       import('./modules/menu/menu.module').then((m) => m.MenuModule),
-    canActivate: [authGuard],
+    canActivate: [AuthGuard],
   },
 ];
 

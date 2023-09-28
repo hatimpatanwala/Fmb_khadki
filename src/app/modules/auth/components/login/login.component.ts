@@ -16,6 +16,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class LoginComponent {
   loginForm: FormGroup;
+
   constructor(
     private formBuilder: FormBuilder,
     private router: Router,
@@ -45,7 +46,7 @@ export class LoginComponent {
       }
     } catch (err) {
       this.loginForm.controls.itsId.setValue(null);
-      this._snackBar.open(err);
+      this._snackBar.open(err, 'error', { duration: 2000 });
     }
   }
 }

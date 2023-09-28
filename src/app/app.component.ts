@@ -1,4 +1,13 @@
 import { Component } from '@angular/core';
+import {
+  trigger,
+  state,
+  style,
+  transition,
+  animate,
+} from '@angular/animations';
+import { SplashScreenService } from './components/splash-screen/service/splash-screen.service';
+import { slideAnimation } from './components/splash-screen/animation';
 
 @Component({
   selector: 'app-root',
@@ -7,10 +16,18 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'fmb-khadki';
-  tempVariable: boolean = true;
-  constructor() {
-    // setTimeout(() => {
-    //   this.tempVariable = true;
-    // }, 5000);
+  splashVisible: boolean = true;
+  constructor(private splashScreenService: SplashScreenService) {}
+  ngOnInit(): void {
+    this.splashScreenService.getSplashScreen().subscribe((isVisible) => {
+      if (!isVisible) {
+        setTimeout(() => {
+          this.splashVisible = isVisible;
+        }, 500);
+      }
+    });
+    setTimeout(() => {
+      this.splashScreenService.hide();
+    }, 3000);
   }
 }

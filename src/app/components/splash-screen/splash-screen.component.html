@@ -1,1 +1,6 @@
-<p>splash-screen works!</p>
+<div class="splash" *ngIf="showSplash" [@slideAnimation]>
+  <!-- Your splash screen content goes here -->
+  <div class="splash-content">
+    <img src="./assets/images/fmb-logo.png" alt="" />
+  </div>
+</div>

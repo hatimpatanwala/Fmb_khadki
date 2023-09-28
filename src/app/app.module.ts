@@ -49,6 +49,7 @@ const initializer = (pwaService: PwaService) => {
     MatIconModule,
     MatBottomSheetModule,
     MatToolbarModule,
+    BrowserAnimationsModule,
   ],
   providers: [
     {

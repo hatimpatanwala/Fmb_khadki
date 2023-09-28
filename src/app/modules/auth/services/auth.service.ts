@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
+import { User } from '../models/UserModel';
+import { UserService } from '../../user/services/user.service';
+import { UserModel } from '../../user/models/UserModel';
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
   private isLoggedIn$ = new BehaviorSubject<boolean>(false);
-
-  constructor() {}
+  constructor(private userService: UserService) {}
   /**
    * This method returns the subscribale observable is loggedin
    * @returns Observable<boolean>
@@ -40,16 +42,21 @@ export class AuthService {
    * @param data
    * @returns Promise<userData>
    */
-  async verifyOtp(data: {
-    its: string;
-    otp: string;
-  }): Promise<{ name: string; itsNo: string }> {
+  async verifyOtp(data: { its: string; otp: string }): Promise<boolean> {
     return new Promise((resolve, reject) => {
       if (data.its === '40401133' && data.otp === '000000') {
-        resolve({ name: 'Hatim Patanwala', itsNo: '40401133' });
+        resolve(true);
       } else {
         reject('Invalid Otp');
       }
     });
+  }
+  setUserData(user: UserModel) {
+    // this.userService.setUserData(user);
+  }
+  authInit() {
+    const token = JSON.parse(localStorage.getItem('token'));
+    if (token) {
+    }
   }
 }

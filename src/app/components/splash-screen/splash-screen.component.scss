@@ -1,0 +1,25 @@
+.splash {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+}
+
+.splash-content {
+  animation: fadeInOut 2s infinite; /* Adjust the duration as needed */
+  opacity: 0;
+  img {
+    width: 300px;
+  }
+}
+
+@keyframes fadeInOut {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
