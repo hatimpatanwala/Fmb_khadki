@@ -29,7 +29,7 @@ export class VerifyOtpComponent {
   }
   ngOnInit(): void {
     this.verifyOtpForm = this.formBuilder.group({
-      itsId: [this.itsId, [Validators.required]],
+      itsId: [{value:this.itsId,disabled:true}, [Validators.required]],
       otp: [null, Validators.required],
     });
   }

@@ -1,1 +1,52 @@
-<p>verify-otp works!</p>
+<div class="verifyOtp_outer" *ngIf="verifyOtpForm" >
+  <div class="umoor-logo">
+    <img src="./assets/images/UMOORFMB.png" alt="" />
+  </div>
+  <div class="verifyOtp_inner">
+    <div class="fmb-logo">
+      <img src="./assets/images/fmb-logo.png" alt="" />
+      <!-- <h1>Pune_Khadki</h1> -->
+    </div>
+    <h3 class="city_name">Pune Khadki</h3>
+    <form [formGroup]="verifyOtpForm" class="verifyOtp-form" (submit)="onVerify()">
+      <mat-form-field appearance="outline" class="otp-input">
+        <mat-label>Enter ITS</mat-label>
+        <input
+          formControlName="itsId"
+          type="number"
+          [disabled]="true"
+          matInput
+          maxlength="4"
+          minlength="4"
+        />
+      </mat-form-field>
+    <mat-form-field appearance="outline" class="otp-input">
+      <mat-label>Enter OTP</mat-label>
+      <input
+        formControlName="otp"
+        type="number"
+        required
+        matInput
+        maxlength="4"
+        minlength="4"
+      />
+    </mat-form-field>
+    <mat-error
+    *ngIf="
+      verifyOtpForm?.controls.otp.touched && verifyOtpForm.controls.otp.invalid">
+    <span *ngIf="verifyOtpForm?.controls.otp.errors.required"
+      >OTP required.</span
+    >
+    <!-- <span *ngIf="verifyOtpForm?.controls.otp.errors.pattern" -->
+      <!-- >Please Enter the valid OTP</span -->
+    <!-- > -->
+  </mat-error>
+  <div class="otpaction-btn">
+    <button mat-raised-button class="verifyOtp-btn"
+    type="submit">Verify</button>
+  </div>
+ 
+</form>
+
+  </div>
+</div>
