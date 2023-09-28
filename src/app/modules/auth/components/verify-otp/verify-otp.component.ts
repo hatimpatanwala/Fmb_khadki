@@ -42,7 +42,7 @@ export class VerifyOtpComponent {
 
       const result = await this.authService.verifyOtp(payload);
       if (result) {
-       
+        localStorage.setItem('token', JSON.stringify('123'));
         this.router.navigate(['/dashboard']);
       }
     } catch (err) {
