@@ -13,19 +13,41 @@
   justify-content: center;
   align-items: center;
 }
-.img-container {
-  img {
-    animation: rotate-animation 1s infinite linear;
+.loader {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
-}
-@keyframes rotate-animation {
-  0% {
-    transform: rotate(0deg);
+  
+  .spinner {
+    animation: spin 2s linear infinite;
   }
-  50% {
-    transform: rotate(180deg);
+  
+  .path {
+    stroke-dasharray: 280;
+    stroke-dashoffset: 0;
+    animation: dash 1.5s ease-in-out infinite;
   }
-  100% {
-    transform: rotate(360deg);
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
   }
-}
+  
+  @keyframes dash {
+    0% {
+      stroke-dashoffset: 280;
+    }
+    50% {
+      stroke-dashoffset: 70;
+    }
+    100% {
+      stroke-dashoffset: 280;
+    }
+  }
+  
