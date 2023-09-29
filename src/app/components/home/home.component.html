@@ -1,1 +1,5 @@
-<router-outlet></router-outlet>
+<div class="home-container">
+  <app-sidenav *ngIf="isLoggedIn$ | async as isLoggedIn"></app-sidenav>
+  <app-header *ngIf="isLoggedIn$ | async as isLoggedIn"></app-header>
+  <router-outlet></router-outlet>
+</div>

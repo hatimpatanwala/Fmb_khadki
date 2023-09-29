@@ -8,6 +8,7 @@ import {
 } from '@angular/animations';
 import { SplashScreenService } from './components/splash-screen/service/splash-screen.service';
 import { slideAnimation } from './components/splash-screen/animation';
+import { AuthService } from './modules/auth/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,10 @@ import { slideAnimation } from './components/splash-screen/animation';
 export class AppComponent {
   title = 'fmb-khadki';
   splashVisible: boolean = true;
-  constructor(private splashScreenService: SplashScreenService) {}
+  constructor(
+    private splashScreenService: SplashScreenService,
+    private authService: AuthService
+  ) {}
   ngOnInit(): void {
     this.splashScreenService.getSplashScreen().subscribe((isVisible) => {
       if (!isVisible) {
@@ -26,8 +30,9 @@ export class AppComponent {
         }, 500);
       }
     });
-    setTimeout(() => {
-      this.splashScreenService.hide();
-    }, 3000);
+    this.authService.authInit();
+    // setTimeout(() => {
+    //   this.splashScreenService.hide();
+    // }, 3000);
   }
 }
