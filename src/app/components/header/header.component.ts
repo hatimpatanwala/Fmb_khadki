@@ -19,6 +19,7 @@ export class HeaderComponent {
     });
   }
   toggle(): void {
+    console.log('toggling');
     this.toggleSideNav.emit();
   }
 }

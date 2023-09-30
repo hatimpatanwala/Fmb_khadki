@@ -9,7 +9,7 @@
     </mat-sidenav>
     <mat-sidenav-content class="content">
       <div class="header" *ngIf="isLoggedIn$ | async as isLoggedIn">
-        <app-header></app-header>
+        <app-header (toggleSideNav)="toggleSideNav()"></app-header>
       </div>
       <div class="router-outlet-outer">
         <router-outlet></router-outlet>
