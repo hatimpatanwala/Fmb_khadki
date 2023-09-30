@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HeaderComponent } from './components/header/header.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
 const initializer = (pwaService: PwaService) => {
   return () => {
     console.log('running');
@@ -35,6 +36,7 @@ const initializer = (pwaService: PwaService) => {
     HeaderComponent,
   ],
   imports: [
+    MatSidenavModule,
     BrowserModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
