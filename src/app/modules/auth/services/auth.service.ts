@@ -59,6 +59,11 @@ export class AuthService {
       }
     });
   }
+  /**
+   * This method sets the user data and set the user data and token in local storage
+   * @param user
+   * @param setOnLocalStorage
+   */
   setUserData(user: UserModel, setOnLocalStorage: boolean = false) {
     this.userService.setUserData(user);
     this.setToken(user.token);
@@ -68,9 +73,16 @@ export class AuthService {
     }
     this.isLoggedIn$.next(true);
   }
+  /**
+   * This method sets the token value on auth variable
+   * @param token
+   */
   setToken(token: string) {
     this.token = token;
   }
+  /**
+   * This method initializes the auth
+   */
   authInit() {
     const token = JSON.parse(localStorage.getItem('token'));
     const userData = JSON.parse(localStorage.getItem('user'));
@@ -83,6 +95,9 @@ export class AuthService {
       this.splashScreenService.hide();
     }, 2000);
   }
+  /**
+   * This method logouts
+   */
   logout() {
     localStorage.clear();
     this.isLoggedIn$.next(false);
