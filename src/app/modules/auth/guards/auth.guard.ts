@@ -19,7 +19,6 @@ export class AuthGuard implements CanActivate {
     | Observable<boolean | UrlTree>
     | Promise<boolean | UrlTree> {
     const token = JSON.parse(localStorage.getItem('token'));
-    console.log(token);
     if (token && token === '123') {
       return true;
     } else {

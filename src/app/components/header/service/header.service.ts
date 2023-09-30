@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 
 @Injectable({
@@ -6,7 +7,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 })
 export class HeaderService {
   public title = new BehaviorSubject<string>('');
-  constructor() {}
+  constructor(private router: Router) {}
   getTitle(): Observable<string> {
     return this.title.asObservable();
   }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, Input, EventEmitter } from '@angular/core';
 import { HeaderService } from './service/header.service';
 
 @Component({
@@ -7,10 +7,18 @@ import { HeaderService } from './service/header.service';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  title: string;
+  title: string = 'Dashboard';
+  @Input() isToggling: boolean;
+  @Output() toggleSideNav = new EventEmitter<void>();
   constructor(private headerService: HeaderService) {
     this.headerService.getTitle().subscribe((title) => {
       this.title = title;
+      if (!this.title) {
+        this.title = 'Dashboard';
+      }
     });
+  }
+  toggle(): void {
+    this.toggleSideNav.emit();
   }
 }

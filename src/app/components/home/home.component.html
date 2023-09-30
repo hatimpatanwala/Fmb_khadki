@@ -1,12 +1,21 @@
 <div class="home-container">
-  <app-sidenav *ngIf="isLoggedIn$ | async as isLoggedIn"></app-sidenav>
-  
-  <mat-sidenav-container class="example-container">
-    <mat-sidenav opened mode="side">Start content</mat-sidenav>
-    <div><app-header *ngIf="isLoggedIn$ | async as isLoggedIn"></app-header>
-        <router-outlet></router-outlet></div>
+  <mat-sidenav-container class="home-inner">
+    <mat-sidenav
+      *ngIf="isLoggedIn$ | async as isLoggedIn"
+      [opened]="!isToggling"
+      [mode]="isToggling ? 'over' : 'side'"
+    >
+      <app-sidenav></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+      <div class="header" *ngIf="isLoggedIn$ | async as isLoggedIn">
+        <app-header></app-header>
+      </div>
+      <div class="router-outlet-outer">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
     <!-- <mat-sidenav opened mode="side" position="end">End content</mat-sidenav> -->
-    Implicit main content
   </mat-sidenav-container>
-  
 </div>
+<!-- [opened]="!isToggling" -->
