@@ -1,3 +1,20 @@
 .home-container {
   height: 100%;
+  .container {
+    height: 100%;
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    .header {
+      height: 65px;
+      background-color: #6b2504;
+    }
+    .sidenav {
+      height: 100%;
+      width: 280px;
+      background-color: #844204;
+    }
+  
+  }
 }

@@ -1,12 +1,15 @@
 <div class="home-container">
-  <app-sidenav *ngIf="isLoggedIn$ | async as isLoggedIn"></app-sidenav>
-  
-  <mat-sidenav-container class="example-container">
-    <mat-sidenav opened mode="side">Start content</mat-sidenav>
-    <div><app-header *ngIf="isLoggedIn$ | async as isLoggedIn"></app-header>
-        <router-outlet></router-outlet></div>
-    <!-- <mat-sidenav opened mode="side" position="end">End content</mat-sidenav> -->
-    Implicit main content
+  <mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav" mode="side" opened="">
+      <app-sidenav></app-sidenav>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <div class="header">
+        <app-header></app-header>
+      </div>
+      <div class="router-outlet-container">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
   </mat-sidenav-container>
-  
 </div>
