@@ -23,6 +23,12 @@ const routes: Routes = [
       import('./modules/menu/menu.module').then((m) => m.MenuModule),
     canActivate: [AuthGuard],
   },
+  {
+    path: 'user',
+    loadChildren: () =>
+      import('./modules/user/user.module').then((m) => m.UserModule),
+    canActivate: [AuthGuard],
+  },
 ];
 
 @NgModule({

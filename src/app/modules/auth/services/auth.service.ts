@@ -5,6 +5,7 @@ import { UserService } from '../../user/services/user.service';
 import { UserModel } from '../../user/models/UserModel';
 import { SplashScreenService } from 'src/app/components/splash-screen/service/splash-screen.service';
 import { instanceToPlain } from 'class-transformer';
+import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root',
 })
@@ -13,7 +14,8 @@ export class AuthService {
   private token: string;
   constructor(
     private userService: UserService,
-    private splashScreenService: SplashScreenService
+    private splashScreenService: SplashScreenService,
+    private router: Router
   ) {}
   /**
    * This method returns the subscribale observable is loggedin
@@ -101,5 +103,6 @@ export class AuthService {
   logout() {
     localStorage.clear();
     this.isLoggedIn$.next(false);
+    this.router.navigate(['/login']);
   }
 }

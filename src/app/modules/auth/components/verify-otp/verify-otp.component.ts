@@ -47,7 +47,7 @@ export class VerifyOtpComponent {
       }
     } catch (err) {
       this.verifyOtpForm.controls.otp.setValue(null);
-      this._snackBar.open(err);
+      this._snackBar.open(err, 'error', { duration: 2000 });
     }
   }
 }

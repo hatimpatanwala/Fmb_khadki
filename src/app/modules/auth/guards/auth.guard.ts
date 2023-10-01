@@ -27,10 +27,3 @@ export class AuthGuard implements CanActivate {
     }
   }
 }
-// export const authGuard = (route, state) => {
-//   const token = JSON.parse(localStorage.get('token'));
-//   if (token && token === '123') {
-//     return true;
-//   } else {
-//   }
-// };

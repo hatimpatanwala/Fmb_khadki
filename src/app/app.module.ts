@@ -30,6 +30,7 @@ import {
   ApplicationHttpClient,
   applicationHttpClientCreator,
 } from './services/http-application.service';
+import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
 const initializer = (pwaService: PwaService) => {
   return () => {
     pwaService.initPwaPrompt();
@@ -65,6 +66,7 @@ const initializer = (pwaService: PwaService) => {
     MatToolbarModule,
     BrowserAnimationsModule,
     MatDividerModule,
+    MatSnackBarModule,
   ],
   providers: [
     {

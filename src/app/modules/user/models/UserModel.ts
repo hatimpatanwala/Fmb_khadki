@@ -5,6 +5,7 @@ export class UserModel {
   itsId: string = '40401133';
   mobileNumber: '9579035465';
   thaaliSize: 'lg' | 'md' | 'sm' = 'md';
+  role: 0 | 1;
   /**
    * This method returns the full name of user
    * @returns string

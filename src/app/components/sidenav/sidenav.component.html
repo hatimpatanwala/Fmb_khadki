@@ -29,13 +29,14 @@
         Menu
       </div>
       <div
-        [routerLink]="['profile']"
+        [routerLink]="['user']"
         routerLinkActive="active-navigation"
         class="navigation-item"
         (click)="toggle()"
       >
         Profile
       </div>
+      <div class="navigation-item" (click)="logout()">Logout</div>
     </div>
   </div>
   <div class="sidenav-bottom">
