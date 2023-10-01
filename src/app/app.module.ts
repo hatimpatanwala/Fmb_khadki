@@ -1,4 +1,9 @@
-import { NgModule, isDevMode, APP_INITIALIZER } from '@angular/core';
+import {
+  NgModule,
+  isDevMode,
+  APP_INITIALIZER,
+  ErrorHandler,
+} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +23,13 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HeaderComponent } from './components/header/header.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatDividerModule } from '@angular/material/divider';
+import { GlobalErrorHandler } from './exceptions/global-error-handler';
+import { HTTP_INTERCEPTORS, HttpClient } from '@angular/common/http';
+import { HeaderInterceptor } from './interceptors/http-interceptor';
+import {
+  ApplicationHttpClient,
+  applicationHttpClientCreator,
+} from './services/http-application.service';
 const initializer = (pwaService: PwaService) => {
   return () => {
     pwaService.initPwaPrompt();
@@ -60,6 +72,13 @@ const initializer = (pwaService: PwaService) => {
       deps: [PwaService],
       multi: true,
       useFactory: initializer,
+    },
+    { provide: ErrorHandler, useClass: GlobalErrorHandler },
+    { provide: HTTP_INTERCEPTORS, useClass: HeaderInterceptor, multi: true },
+    {
+      provide: ApplicationHttpClient,
+      useFactory: applicationHttpClientCreator,
+      deps: [HttpClient],
     },
   ],
   bootstrap: [AppComponent],
