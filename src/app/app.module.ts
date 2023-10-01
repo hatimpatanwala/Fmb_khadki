@@ -16,10 +16,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { HeaderComponent } from './components/header/header.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatDividerModule } from '@angular/material/divider';
 const initializer = (pwaService: PwaService) => {
   return () => {
-    console.log('running');
     pwaService.initPwaPrompt();
     return Promise.resolve();
   };
@@ -52,6 +52,7 @@ const initializer = (pwaService: PwaService) => {
     MatBottomSheetModule,
     MatToolbarModule,
     BrowserAnimationsModule,
+    MatDividerModule,
   ],
   providers: [
     {

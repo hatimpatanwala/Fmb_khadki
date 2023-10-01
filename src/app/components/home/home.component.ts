@@ -15,7 +15,7 @@ export class HomeComponent {
     this.isToggling = event.target.innerWidth < 900;
   }
   isLoggedIn$: Observable<boolean>;
-    isToggling: boolean = true;
+  isToggling: boolean = true;
   constructor(private authService: AuthService) {}
   ngOnInit() {
     this.isToggling = innerWidth < 900;

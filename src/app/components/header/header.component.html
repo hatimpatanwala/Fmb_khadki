@@ -2,5 +2,7 @@
   <div class="title">
     {{ title }}
   </div>
-  <div (click)="toggle()">toggle</div>
+  <div *ngIf="isToggling" class="toggle-btn" (click)="toggle()">
+    <mat-icon>menu</mat-icon>
+  </div>
 </div>

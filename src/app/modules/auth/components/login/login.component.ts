@@ -37,7 +37,6 @@ export class LoginComponent {
   async onSubmit(): Promise<void> {
     try {
       const payload = { its: this.loginForm.controls.itsId.value.toString() };
-      console.log(payload);
       const result = await this.authService.login(payload);
       if (result) {
         this.router.navigate(['verify-otp'], {

@@ -86,7 +86,6 @@ export class AuthService {
   authInit() {
     const token = JSON.parse(localStorage.getItem('token'));
     const userData = JSON.parse(localStorage.getItem('user'));
-    console.log(token);
     if (token && userData) {
       this.setUserData(userData);
     } else {

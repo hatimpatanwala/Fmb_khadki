@@ -4,11 +4,21 @@
   //   width: 100%;
   display: flex;
   align-items: center;
-
+  justify-content: space-between;
   padding: 0px 10px;
   .title {
     font-size: 30px;
     color: $secondaryTextColor;
     font-style: italic;
+  }
+  .toggle-btn {
+    display: flex;
+    cursor: pointer;
+    .mat-icon {
+      color: #fff;
+      height: 30px;
+      width: 30px;
+      font-size: 30px;
+    }
   }
 }
