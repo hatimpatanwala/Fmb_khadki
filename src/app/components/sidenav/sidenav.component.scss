@@ -57,14 +57,16 @@
       padding: 10px 0px;
       display: flex;
       flex-direction: column;
+
       .navigation-item {
         padding: 15px;
-        font-size: 25px;
+        font-size: 15px;
         color: $backgroundColor;
         text-transform: uppercase;
         font-weight: 500;
         cursor: pointer;
         line-height: 140%;
+        padding-left: 20px;
         &:hover {
           background-color: $backgroundColor;
           color: $primaryTextColor;

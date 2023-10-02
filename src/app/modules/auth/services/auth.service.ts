@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { User } from '../models/UserModel';
 import { UserService } from '../../user/services/user.service';
 import { UserModel } from '../../user/models/UserModel';
 import { SplashScreenService } from 'src/app/components/splash-screen/service/splash-screen.service';
@@ -54,6 +53,10 @@ export class AuthService {
     return new Promise((resolve, reject) => {
       if (data.its === '40401133' && data.otp === '000000') {
         const userData = new UserModel();
+        const plainUserData = instanceToPlain(userData);
+        resolve(plainUserData);
+      } else if (data.its === '40402100' && data.otp === '000000') {
+        const userData = new UserModel(0);
         const plainUserData = instanceToPlain(userData);
         resolve(plainUserData);
       } else {

@@ -45,7 +45,7 @@ export class LoginComponent {
       }
     } catch (err) {
       this.loginForm.controls.itsId.setValue(null);
-      this._snackBar.open(err, 'error', { duration: 2000 });
+      this._snackBar.open(err, 'success');
     }
   }
 }

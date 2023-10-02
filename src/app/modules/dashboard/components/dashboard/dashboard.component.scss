@@ -1,0 +1,44 @@
+.dashboard-outer {
+  padding: 10px;
+  .row1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .payment-card {
+      background-color: white;
+      padding: 20px;
+      text-align: center;
+      border-radius: 10px;
+      .title {
+        font-size: 16px;
+        font-weight: 500;
+      }
+      .value {
+        font-weight: 600;
+        font-size: 18px;
+        margin-top: 10px;
+      }
+    }
+    .pending {
+      background-color: red;
+    }
+  }
+  .mobile {
+    display: none;
+  }
+  @media (max-width: 900px) {
+    .desktop {
+      display: none;
+    }
+    .row1.mobile {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      gap: 12px;
+      .payment-card {
+        // width: 100%;
+        width: 90%;
+      }
+    }
+  }
+}
