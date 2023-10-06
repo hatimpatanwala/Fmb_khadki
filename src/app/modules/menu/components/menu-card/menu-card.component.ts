@@ -15,18 +15,19 @@ export class MenuCardComponent {
   isToday: boolean;
   dayBefore: string;
   today: string;
+  isChecked: boolean;
   constructor() {}
   ngOnInit() {
     console.log(this.menu);
     this.date = moment(this.menu.menuDate).format('DD');
     this.month = moment(this.menu.menuDate).format('MMM');
     this.day = moment(this.menu.menuDate).format('ddd');
-    console.log(this.date, this.day, this.month);
     this.isToday =
       moment(this.menu.menuDate).format('DD') === moment().format('DD');
     this.dayBefore = moment(this.menu.menuDate)
       .subtract(1, 'days')
       .format('dddd');
     this.today = moment(this.menu.menuDate).format('dddd');
+    this.isChecked = this.isToday;
   }
 }

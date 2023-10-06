@@ -8,12 +8,14 @@
       </div>
     </div>
     <div class="toggle">
-      <mat-slide-toggle [disabled]="!isToday" class="slide-toggle"
+      <mat-slide-toggle
+        [(ngModel)]="isChecked"
+        [disabled]="!isToday"
+        class="slide-toggle"
         >Thaali required?</mat-slide-toggle
       >
       <span class="rsvp"
-        >RSVP {{ isToday ? "ends" : "starts" }}
-        {{ isToday ? today : dayBefore }} at
+        >RSVP {{ isToday ? "ends" : "starts" }} {{ dayBefore }} at
         {{ isToday ? "8:00pm" : "5:00am" }}</span
       >
     </div>
@@ -25,13 +27,13 @@
       Palidu, khichdi</span
     >
     <div class="toggle-qty">
-      <mat-slide-toggle class="slide-toggle" [disabled]="!isToday"
+      <mat-slide-toggle class="slide-toggle" *ngIf="isToday && isChecked"
         >Tarkari
       </mat-slide-toggle>
-      <mat-slide-toggle class="slide-toggle" [disabled]="!isToday"
+      <mat-slide-toggle class="slide-toggle" *ngIf="isToday && isChecked"
         >Palidu
       </mat-slide-toggle>
-      <mat-slide-toggle class="slide-toggle" [disabled]="!isToday"
+      <mat-slide-toggle class="slide-toggle" *ngIf="isToday && isChecked"
         >Rice
       </mat-slide-toggle>
     </div>
