@@ -1,0 +1,39 @@
+<div class="menu-card-outer">
+  <div class="menu-card-top">
+    <div class="calender-outer">
+      <div class="day">{{ day }}</div>
+      <div>
+        <span class="date">{{ date }}</span>
+        <span class="month"> {{ month }}</span>
+      </div>
+    </div>
+    <div class="toggle">
+      <mat-slide-toggle [disabled]="!isToday" class="slide-toggle"
+        >Thaali required?</mat-slide-toggle
+      >
+      <span class="rsvp"
+        >RSVP {{ isToday ? "ends" : "starts" }}
+        {{ isToday ? today : dayBefore }} at
+        {{ isToday ? "8:00pm" : "5:00am" }}</span
+      >
+    </div>
+  </div>
+  <mat-divider class="divider"></mat-divider>
+  <div class="menu-card-bottom">
+    <span class="menu-data"
+      ><span class="menu-text">Menu:</span> Kheer, Chicken Tarkari, Rotis,
+      Palidu, khichdi</span
+    >
+    <div class="toggle-qty">
+      <mat-slide-toggle class="slide-toggle" [disabled]="!isToday"
+        >Tarkari
+      </mat-slide-toggle>
+      <mat-slide-toggle class="slide-toggle" [disabled]="!isToday"
+        >Palidu
+      </mat-slide-toggle>
+      <mat-slide-toggle class="slide-toggle" [disabled]="!isToday"
+        >Rice
+      </mat-slide-toggle>
+    </div>
+  </div>
+</div>

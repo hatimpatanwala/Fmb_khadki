@@ -1,0 +1,11 @@
+@import "/src/app/theme/colors.scss";
+.action-btn {
+  background: $primaryButtonColor;
+  color: #fff !important;
+  //   width: 150px;
+  width: 100%;
+  //   text-transform: uppercase;
+}
+::ng-deep .mat-mdc-button[disabled] {
+  opacity: 0.7;
+}

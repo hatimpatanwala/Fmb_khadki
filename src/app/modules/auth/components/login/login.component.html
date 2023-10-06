@@ -33,17 +33,21 @@
         >
       </mat-error>
       <div class="login-action-container">
-        <button
+        <!-- <button
           mat-button
           class="login-action-btn"
           type="submit"
           [disabled]="loginForm.invalid"
         >
           submit
-        </button>
+        </button> -->
+        <app-action-button
+          class="login-action-btn"
+          type="submit"
+          [disabled]="loginForm.invalid"
+          >Submit</app-action-button
+        >
       </div>
-      
     </form>
   </div>
-  
 </div>

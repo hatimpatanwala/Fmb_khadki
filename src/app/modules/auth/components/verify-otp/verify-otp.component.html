@@ -46,15 +46,19 @@
         <!-- > -->
       </mat-error>
       <div class="otpaction-btn">
-        <button mat-raised-button class="verifyOtp-btn" type="submit">
-          Verify
-        </button>
+        <app-action-button
+          class="login-action-btn"
+          type="submit"
+          [disabled]="verifyOtpForm.invalid"
+          >Verify</app-action-button
+        >
       </div>
-      
-        <p class="changeitsid"><a [routerLink]="['/login']" style="text-decoration: none;">Change ITS ID?</a></p>
 
-     
-      
+      <p class="changeitsid">
+        <a [routerLink]="['/login']" style="text-decoration: none"
+          >Change ITS ID?</a
+        >
+      </p>
     </form>
   </div>
 </div>

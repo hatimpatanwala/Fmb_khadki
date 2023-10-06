@@ -1,9 +1,11 @@
 @import "/src/app/theme/colors.scss";
 .home-container {
+  overflow: auto;
   height: 100%;
   .home-inner {
     height: 100%;
     background-color: inherit;
+    overflow: auto;
     mat-sidenav {
       background-color: $secondaryBackgroundColor;
       width: 280px;
@@ -24,8 +26,10 @@
     }
     .router-outlet-outer {
       // background-color: #fff;
+      overflow: auto;
       height: 100%;
       width: 100%;
+      // background-color:rgba(255,0,0,0.3)
     }
   }
 }

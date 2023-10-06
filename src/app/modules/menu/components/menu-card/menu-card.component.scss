@@ -1,0 +1,68 @@
+@import "/src/app/theme/colors.scss";
+
+.menu-card-outer {
+  background-color: ivory;
+  border-radius: 12px;
+  padding: 10px 10px 10px 20px;
+  min-height: 90px;
+  .menu-card-top {
+    display: flex;
+    width: 100%;
+    gap: 30px;
+    .calender-outer {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      min-height: 35px;
+      border-radius: 20px;
+      align-items: center;
+      width: 75px;
+      border: 1px solid $secondaryBackgroundColor;
+      padding-bottom: 10px;
+      gap: 10px;
+      .date,
+      .month {
+        font-size: 15px;
+        font-weight: 600;
+      }
+      .day {
+        font-size: 20px;
+        width: 100%;
+        text-align: center;
+        background-color: $secondaryBackgroundColor;
+        border-radius: 18px 18px 0px 0px;
+        padding: 10px 0;
+        color: ivory;
+      }
+    }
+    .toggle {
+      display: flex;
+      flex-direction: column;
+      .slide-toggle {
+        margin-top: 10px;
+      }
+      .rsvp {
+        font-size: 12px;
+        margin-top: 20px;
+      }
+    }
+  }
+  .divider {
+    width: 100%;
+    margin: 10px 0px;
+  }
+  .menu-card-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    // overflow: auto;
+    .menu-text {
+      font-weight: 600;
+      color: $secondaryBackgroundColor;
+    }
+    .toggle-qty {
+      display: flex;
+      gap: 10px;
+    }
+  }
+}
