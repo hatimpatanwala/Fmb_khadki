@@ -1,0 +1,14 @@
+@import "/src/app/theme/fonts.scss";
+.profile-outer {
+  padding: 10px;
+  .table-title {
+    margin: 10px 0 !important;
+    font-size: 30px;
+    font-weight: 600;
+  }
+  th,
+  td,
+  tr {
+    font-family: $primaryFont !important;
+  }
+}

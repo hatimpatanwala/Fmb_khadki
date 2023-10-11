@@ -1,13 +1,13 @@
 <div class="dashboard-outer">
-  <div class="row1 desktop">
-    <div class="payment-card">
+  <div class="row1">
+    <!-- <div class="payment-card">
       <div class="title">Takmeem Amount</div>
       <div class="value">&#8377;20000</div>
     </div>
     <div class="payment-card">
       <div class="title">Paid Amount</div>
       <div class="value">&#8377;10000</div>
-    </div>
+    </div> -->
     <div class="payment-card pending">
       <div class="title">Pending Amount</div>
       <div class="value">&#8377;10000</div>
@@ -17,7 +17,7 @@
     <div class="today-menu">
       <app-menu-card [menu]="menuData"></app-menu-card>
     </div>
-    <div class="row1 mobile">
+    <!-- <div class="row1 mobile">
       <div class="payment-card">
         <div class="title">Takhmeem Amount</div>
         <div class="value">&#8377;20000</div>
@@ -30,9 +30,9 @@
         <div class="title">Pending Amount</div>
         <div class="value">&#8377;10000</div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="payment-history">
+    <!-- <div class="payment-history">
       <table
         mat-table
         [dataSource]="paymentHistoryData"
@@ -51,6 +51,6 @@
         <tr mat-header-row *matHeaderRowDef="tableColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: tableColumns"></tr>
       </table>
-    </div>
+    </div> -->
   </div>
 </div>

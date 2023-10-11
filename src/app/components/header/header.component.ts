@@ -13,9 +13,6 @@ export class HeaderComponent {
   constructor(private headerService: HeaderService) {
     this.headerService.getTitle().subscribe((title) => {
       this.title = title;
-      if (!this.title) {
-        this.title = 'Dashboard';
-      }
     });
   }
   toggle(): void {

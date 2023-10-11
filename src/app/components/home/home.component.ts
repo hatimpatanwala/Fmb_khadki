@@ -2,6 +2,7 @@ import { Component, HostListener, ViewChild } from '@angular/core';
 import { MatSidenav } from '@angular/material/sidenav';
 import { Observable } from 'rxjs';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
+import { HeaderService } from '../header/service/header.service';
 
 @Component({
   selector: 'app-home',

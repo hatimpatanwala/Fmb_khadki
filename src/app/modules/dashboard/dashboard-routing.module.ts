@@ -8,11 +8,9 @@ const routes: Routes = [
   {
     path: '',
     component: DashboardComponent,
-  },
-  {
-    path: 'admin',
-    component: AdminDashboardComponent,
-    canActivate: [RoleGuard],
+    data: {
+      title: 'Home',
+    },
   },
 ];
 

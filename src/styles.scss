@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-
+@import "/src/app/theme/fonts.scss";
 html,
 body {
   height: 100vh;
@@ -17,6 +17,7 @@ h6,
 p {
   margin: 0;
   padding: 0;
+  font-family: $primaryFont !important;
 }
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -25,4 +26,10 @@ input::-webkit-inner-spin-button {
 }
 input[type="number"] {
   -moz-appearance: textfield;
+}
+.mat-typography {
+  font-family: $primaryFont;
+}
+label {
+  font-family: $primaryFont !important;
 }

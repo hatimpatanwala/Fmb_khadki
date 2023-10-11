@@ -5,6 +5,9 @@ const routes: Routes = [
   {
     path: '',
     component: ProfileComponent,
+    data: {
+      title: 'Profile',
+    },
   },
 ];
 @NgModule({

@@ -7,9 +7,10 @@
   justify-content: space-between;
   padding: 0px 10px;
   .title {
-    font-size: 30px;
+    font-size: 25px;
     color: $secondaryTextColor;
-    font-style: italic;
+    font-weight: 500;
+    letter-spacing: 2px;
   }
   .toggle-btn {
     display: flex;

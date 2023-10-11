@@ -26,7 +26,7 @@
       ><span class="menu-text">Menu:</span> Kheer, Chicken Tarkari, Rotis,
       Palidu, khichdi</span
     >
-    <div class="toggle-qty">
+    <!-- <div class="toggle-qty">
       <mat-slide-toggle class="slide-toggle" *ngIf="isToday && isChecked"
         >Tarkari
       </mat-slide-toggle>
@@ -36,6 +36,48 @@
       <mat-slide-toggle class="slide-toggle" *ngIf="isToday && isChecked"
         >Rice
       </mat-slide-toggle>
+    </div> -->
+    <div class="toggle-actn-outer">
+      <div class="outer-container">
+        <div class="tiffin">
+          <div class="header-container"></div>
+          <div class="container">Roti</div>
+          <div class="container">Rice</div>
+          <div class="container">Rice</div>
+          <div class="container">Tarkari</div>
+          <div class="container">Palidu</div>
+
+          <!-- <div class="container last">Rice</div> -->
+        </div>
+        <div class="qty-selection-container">
+          <div class="qty-container">
+            <!-- <div>Roti</div> -->
+            <mat-form-field appearance="outline">
+              <mat-label>Quantity</mat-label>
+              <mat-select>
+                <mat-option value="12">12</mat-option>
+                <mat-option value="8">8</mat-option>
+                <mat-option value="4">4</mat-option>
+                <mat-option value="0">0</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="qty-container">
+            <mat-slide-toggle class="slide-toggle">Rice </mat-slide-toggle>
+          </div>
+          <div class="qty-container">
+            <mat-slide-toggle class="slide-toggle">Rice </mat-slide-toggle>
+          </div>
+          <div class="qty-container">
+            <mat-slide-toggle class="slide-toggle">Tarkari </mat-slide-toggle>
+          </div>
+          <div class="qty-container">
+            <mat-slide-toggle class="slide-toggle">Palidu </mat-slide-toggle>
+          </div>
+
+          <!-- <div class="qty-container">xxxx</div> -->
+        </div>
+      </div>
     </div>
   </div>
 </div>

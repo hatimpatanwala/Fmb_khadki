@@ -20,6 +20,7 @@
       border: 1px solid $secondaryBackgroundColor;
       padding-bottom: 10px;
       gap: 10px;
+      height: 70px;
       .date,
       .month {
         font-size: 15px;
@@ -63,6 +64,98 @@
     .toggle-qty {
       display: flex;
       gap: 10px;
+    }
+  }
+  .toggle-actn-outer {
+    // display: flex;
+    // justify-content: center;
+    .outer-container {
+      // width: 450px;
+      // height: 350px;
+      // border: 2px solid goldenrod;
+      // background: ivory;
+      display: flex;
+      // justify-content: center;
+      // gap: 20px;
+
+      .tiffin {
+        // margin-left: 8px;
+        .header-container {
+          width: 70px;
+          height: 35px;
+          margin-left: 20px;
+          text-align: center;
+          background-color: transparent;
+          border: 7px solid goldenrod; /* Golden brown border with 7px width */
+          border-radius: 15px;
+          line-height: 140%;
+          font-size: 16px;
+          border-bottom: 0;
+        }
+
+        .container {
+          width: 120px;
+          height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: transparent;
+          border: 2px solid goldenrod;
+          border-radius: 15px;
+          line-height: 140%px;
+          font-size: 16px;
+          border-radius: 0px 0px 0px 0px;
+          &:nth-child(2) {
+            border-radius: 15px 15px 0px 0px;
+          }
+          &:last-child {
+            border-radius: 0px 0px 15px 15px;
+            height: 55px;
+            border-bottom: 8px solid goldenrod;
+          }
+        }
+      }
+      .qty-selection-container {
+        // width: 150;
+        // height: 75px;
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        gap: 5px;
+        margin-top: 42px;
+        .qty-container {
+          height: 40px;
+          // border: 0.2px solid #b7b7b7;
+          display: flex;
+          // justify-content: center;
+          align-items: center;
+          padding: 0px 20px;
+          ::ng-deep .mat-mdc-form-field-subscript-wrapper {
+            display: none;
+          }
+          ::ng-deep
+            .mat-mdc-text-field-wrapper.mdc-text-field--outlined
+            .mat-mdc-form-field-infix {
+            width: 100%;
+            min-width: 90px;
+            min-height: 25px;
+            padding: 5px 0px;
+          }
+          ::ng-deep
+            .mat-mdc-text-field-wrapper
+            .mat-mdc-form-field-flex
+            .mat-mdc-floating-label {
+            top: 16px;
+          }
+          ::ng-deep
+            .mat-mdc-text-field-wrapper.mdc-text-field--outlined
+            .mdc-notched-outline--upgraded
+            .mdc-floating-label--float-above {
+            transform: translateY(-25.75px)
+              scale(var(--mat-mdc-form-field-floating-label-scale, 0.75));
+          }
+        }
+      }
     }
   }
 }

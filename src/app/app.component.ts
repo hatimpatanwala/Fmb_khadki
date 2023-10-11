@@ -9,6 +9,7 @@ import {
 import { SplashScreenService } from './components/splash-screen/service/splash-screen.service';
 import { slideAnimation } from './components/splash-screen/animation';
 import { AuthService } from './modules/auth/services/auth.service';
+import { HeaderService } from './components/header/service/header.service';
 
 @Component({
   selector: 'app-root',
@@ -20,7 +21,8 @@ export class AppComponent {
   splashVisible: boolean = true;
   constructor(
     private splashScreenService: SplashScreenService,
-    private authService: AuthService
+    private authService: AuthService,
+    private headerService: HeaderService
   ) {}
   ngOnInit(): void {
     this.splashScreenService.getSplashScreen().subscribe((isVisible) => {
@@ -30,6 +32,7 @@ export class AppComponent {
         }, 500);
       }
     });
+    this.headerService.headerInit();
     this.authService.authInit();
     // setTimeout(() => {
     //   this.splashScreenService.hide();

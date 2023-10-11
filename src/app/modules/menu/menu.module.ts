@@ -7,6 +7,10 @@ import { MenuCardComponent } from './components/menu-card/menu-card.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [MenuComponent, MenuCardComponent],
@@ -18,6 +22,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatIconModule,
     FormsModule,
     ReactiveFormsModule,
+    MatCheckboxModule,
+    MatRadioModule,
+    MatFormFieldModule,
+    MatSelectModule,
   ],
   exports: [MenuCardComponent],
 })
