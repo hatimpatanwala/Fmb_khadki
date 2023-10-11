@@ -11,6 +11,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [MenuComponent, MenuCardComponent],
@@ -26,6 +27,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatRadioModule,
     MatFormFieldModule,
     MatSelectModule,
+    SharedModule,
   ],
   exports: [MenuCardComponent],
 })

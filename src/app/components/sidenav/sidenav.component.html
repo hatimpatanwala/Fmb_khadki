@@ -18,7 +18,8 @@
         routerLinkActive="active-navigation"
         (click)="toggle()"
       >
-        Home
+        <div class="icon"><mat-icon>dashboard</mat-icon></div>
+        <div>Home</div>
       </div>
       <div
         [routerLink]="['menu']"
@@ -26,7 +27,8 @@
         class="navigation-item"
         (click)="toggle()"
       >
-        Menu
+        <div class="icon"><mat-icon> restaurant</mat-icon></div>
+        <div>Menu</div>
       </div>
       <div
         [routerLink]="['user']"
@@ -34,9 +36,13 @@
         class="navigation-item"
         (click)="toggle()"
       >
-        Profile
+        <div class="icon"><mat-icon>person_outline</mat-icon></div>
+        <div>Profile</div>
       </div>
-      <div class="navigation-item" (click)="logout()">Logout</div>
+      <div class="navigation-item" (click)="logout()">
+        <div class="icon"><mat-icon>exit_to_app</mat-icon></div>
+        <div>Logout</div>
+      </div>
     </div>
   </div>
   <div class="sidenav-bottom">

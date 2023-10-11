@@ -43,7 +43,7 @@ export class VerifyOtpComponent {
       const result = await this.authService.verifyOtp(payload);
       if (result) {
         this.authService.setUserData(result, true);
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/home']);
       }
     } catch (err) {
       this.verifyOtpForm.controls.otp.setValue(null);

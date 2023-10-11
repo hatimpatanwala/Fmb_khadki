@@ -59,17 +59,30 @@
       flex-direction: column;
 
       .navigation-item {
+        display: flex;
+        // justify-content: center;
+        align-items: center;
+        gap: 10px;
         padding: 15px;
         font-size: 15px;
         color: $backgroundColor;
         text-transform: uppercase;
         font-weight: 500;
         cursor: pointer;
-        line-height: 140%;
+        // line-height: 140%;
         padding-left: 20px;
         &:hover {
           background-color: $backgroundColor;
           color: $primaryTextColor;
+        }
+        .mat-icon {
+          height: 20px;
+          width: 20px;
+          font-size: 20px;
+        }
+        .icon {
+          height: 20px;
+          width: 20pcx;
         }
       }
       .active-navigation {
@@ -93,6 +106,7 @@
     }
     .designed-by {
       text-align: center;
+      font-weight: 600;
     }
   }
 }

@@ -29,6 +29,7 @@ export class ProfileComponent {
     { title: 'Takhmeem Amount', value: '10000' },
     { title: 'Amount Paid', value: '0' },
     { title: 'Sector No', value: '48' },
+    { title: 'Sabeel No', value: 'N1234' },
   ];
   constructor(private userService: UserService) {}
   ngOnInit(): void {
